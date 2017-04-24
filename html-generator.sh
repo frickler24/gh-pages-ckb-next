@@ -1,10 +1,6 @@
 #!/bin/bash
-cd ../ckb-next
 rm content
 find . -maxdepth 1 -type d -exec html-gen2.sh {} \;
-
-pwd
-ls -l pres-html.html pres-pdf.html
 
 awk 'NR==FNR { a[n++]=$0; next }
 /PUT_SECTION_HERE/ { for (i=0;i<n;++i) print a[i]; next }
