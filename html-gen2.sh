@@ -8,6 +8,7 @@
 if [ "x$1" == "x." ] ; then exit 0; fi
 if [ "x$1" == "x./.git" ] ; then exit 0; fi
 if [ "x$1" == "x./bin" ] ; then exit 0; fi
+if [ "x$1" == "x./doxygenDoc" ] ; then exit 0; fi
 
 # dirnames are in ./directoy but we need directory only
 DIRNAME=$(echo $1 | cut -d/ -f2)
