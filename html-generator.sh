@@ -1,6 +1,8 @@
 #!/bin/bash
+
 ####
 # Script to search for all branches with documentation
+####
 
 # Clean up to start with new files
 rm -f content{,html,pdf}

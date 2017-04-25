@@ -2,6 +2,7 @@
 
 ####
 # Script to generate a link file for a given directory name
+####
 
 # Check which dirnames are unwanted
 if [ "x$1" == "x." ] ; then echo "found ., ignored" ; exit 0; fi
