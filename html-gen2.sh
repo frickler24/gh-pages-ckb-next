@@ -21,11 +21,13 @@ echo "Generating link for ${DIRNAME}"
 sed s/BRANCH/$DIRNAME/g snippet-file >> content
 
 # Create a tarfile with man pages
-echo "searching for man files in $1"
-cd $1
-pwd
-ls -l
+echo "searching for man files in $1/all"
+cd $1/all
 tar cvfz ckb-next-man.tar.gz man
 rm -rf man/
+# Clean up all other man directories
+cd ..
+find . -name man -type d -exec rm -rf {} \;
+find . -name man -type d -exec ls -lsd {} \;
 exit 0
 
