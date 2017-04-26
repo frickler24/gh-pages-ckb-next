@@ -19,5 +19,10 @@ echo "Generating link for ${DIRNAME}"
 
 # Assume that content file was cleared before the first call.
 sed s/BRANCH/$DIRNAME/g snippet-file >> content
+
+# Create a tarfile with man pages
+cd $1
+tar cvfz ckb-next-man.tar.gz man
+rm -rf man/
 exit 0
 
