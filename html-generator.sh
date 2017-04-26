@@ -5,7 +5,7 @@
 ####
 
 # Clean up to start with new files
-rm -f content{,html,pdf}
+rm -f content{,html,pdf,man}
 
 # find all directories and call html-gen2.sh for each of them
 # Filtering for unwanted dirs occurs in the script called
@@ -14,7 +14,7 @@ find . -maxdepth 1 -type d -exec ./html-gen2.sh {} \;
 # echo Now change the result for html and pdf links
 sed s/FORMATDEFINITION/html/g content > contenthtml
 sed s\!FORMATDEFINITION\!latex/refman.pdf\!g content > contentpdf
-sed s\!FORMATDEFINITION\!ckb-next-man.tar.gz\!g content > contentman
+sed s\!FORMATDEFINITION\!ckb-next-man.tar.gz\!g content-manpages > contentman
 
 # echo replace the searchstring with the new content
 awk 'NR==FNR { a[n++]=$0; next }

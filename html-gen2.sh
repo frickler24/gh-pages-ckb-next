@@ -19,15 +19,14 @@ echo "Generating link for ${DIRNAME}"
 
 # Assume that content file was cleared before the first call.
 sed s/BRANCH/$DIRNAME/g snippet-file >> content
+sed s/BRANCH/$DIRNAME/g snippet-file-manpages >> content-manpages
 
 # Create a tarfile with man pages
 echo "searching for man files in $1/all"
 cd $1/all
-tar cvfz ckb-next-man.tar.gz man
+tar cfz ckb-next-man.tar.gz man
 rm -rf man/
 # Clean up all other man directories
-cd ..
-find . -name man -type d -exec rm -rf {} \;
-find . -name man -type d -exec ls -lsd {} \;
+find .. -name man -type d -exec rm -rf {} \;
 exit 0
 
