@@ -9,7 +9,7 @@ rm -f content{,html,pdf}
 
 # find all directories and call html-gen2.sh for each of them
 # Filtering for unwanted dirs occurs in the script called
-find . -maxdepth 1 -type d -exec html-gen2.sh {} \;
+find . -maxdepth 1 -type d -exec ./html-gen2.sh {} \;
 
 # echo Now change the result for html and pdf links
 sed s/FORMATDEFINITION/html/g content > contenthtml
