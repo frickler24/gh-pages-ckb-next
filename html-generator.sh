@@ -5,7 +5,7 @@
 ####
 
 # Clean up to start with new files
-rm -f content{,html,pdf,man}
+rm -f content{,html,pdf,man-pages}
 
 # find all directories and call html-gen2.sh for each of them
 # Filtering for unwanted dirs occurs in the script called
