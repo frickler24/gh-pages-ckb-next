@@ -19,14 +19,14 @@ sed s\!FORMATDEFINITION\!ckb-next-man.tar.gz\!g content-manpages | sed s/_blank/
 # echo replace the searchstring with the new content
 awk 'NR==FNR { a[n++]=$0; next }
 /PUT_SECTION_HERE/ { for (i=0;i<n;++i) print a[i]; next }
-1' contenthtml pres-html.html.input > /tmp/xx pres-html.html
+1' contenthtml pres-html.html.input > pres-html.html
 
 awk 'NR==FNR { a[n++]=$0; next }
 /PUT_SECTION_HERE/ { for (i=0;i<n;++i) print a[i]; next }
-1' contentpdf pres-pdf.html.input > /tmp/xx pres-pdf.html
+1' contentpdf pres-pdf.html.input > pres-pdf.html
 
 awk 'NR==FNR { a[n++]=$0; next }
 /PUT_SECTION_HERE/ { for (i=0;i<n;++i) print a[i]; next }
-1' contentman pres-man.html.input > /tmp/xx pres-man.html
+1' contentman pres-man.html.input > pres-man.html
 
 exit 0
