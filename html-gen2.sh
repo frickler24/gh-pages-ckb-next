@@ -25,12 +25,10 @@ sed s/BRANCH/$DIRNAME/g snippet-file-manpages >> content-manpages
 echo "searching for man files in $1/all"
 cd $1/all
 tar cfz ckb-next-man.tar.gz man
-rm -rf man/
 # Clean up all other man directories
 cd ..
 echo "Clearing other man directories"
-pwd
-find . -name man -type d -exec echo rm -rf {} \;
+rm -rf ckb/man ckb-daemon/man
 find . -name latex -type d -exec sh -c "cd {} ; mv refman.pdf ../ ; rm -rf ./* ; mv ../refman.pdf ." \;
 exit 0
 
