@@ -28,7 +28,9 @@ tar cfz ckb-next-man.tar.gz man
 rm -rf man/
 # Clean up all other man directories
 cd ..
-find . -name man -type d -exec rm -rf {} \;
+echo "Clearing other man directories"
+pwd
+find . -name man -type d -exec echo rm -rf {} \;
 find . -name latex -type d -exec sh -c "cd {} ; mv refman.pdf ../ ; rm -rf ./* ; mv ../refman.pdf ." \;
 exit 0
 
