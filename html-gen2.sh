@@ -17,9 +17,10 @@ done
 DIRNAME=$(echo $1 | cut -d/ -f2)
 echo "Generating link for ${DIRNAME}"
 
+BRANCHNAME="${DIRNAME} from $(date)"
 # Assume that content file was cleared before the first call.
-sed s/BRANCH/$DIRNAME/g snippet-file >> content
-sed s/BRANCH/$DIRNAME/g snippet-file-manpages >> content-manpages
+sed s/BRANCH/$BRANCHNAME/g snippet-file >> content
+sed s/BRANCH/$BRANCHNAME/g snippet-file-manpages >> content-manpages
 
 # Create a tarfile with man pages
 echo "searching for man files in $1/all"
